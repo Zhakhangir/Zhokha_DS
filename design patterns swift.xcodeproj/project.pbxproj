@@ -38,6 +38,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		22A8495329B22F64000F15A3 /* MVC */ = {
+			isa = PBXGroup;
+			children = (
+				22FA03DD29B09B890077CC2E /* ViewController.swift */,
+			);
+			path = MVC;
+			sourceTree = "<group>";
+		};
+		22A8495429B22F71000F15A3 /* Patterns */ = {
+			isa = PBXGroup;
+			children = (
+				22A8495329B22F64000F15A3 /* MVC */,
+			);
+			path = Patterns;
+			sourceTree = "<group>";
+		};
 		22FA03CD29B09B890077CC2E = {
 			isa = PBXGroup;
 			children = (
@@ -59,21 +75,21 @@
 		22FA03D829B09B890077CC2E /* design patterns swift */ = {
 			isa = PBXGroup;
 			children = (
-				22FA03ED29B09DE90077CC2E /* ProjectSettings */,
-				22FA03D929B09B890077CC2E /* AppDelegate.swift */,
-				22FA03DD29B09B890077CC2E /* ViewController.swift */,
-				22FA03E229B09B8C0077CC2E /* Assets.xcassets */,
-				22FA03E429B09B8C0077CC2E /* LaunchScreen.storyboard */,
+				22A8495429B22F71000F15A3 /* Patterns */,
+				22FA03ED29B09DE90077CC2E /* Base */,
 			);
 			path = "design patterns swift";
 			sourceTree = "<group>";
 		};
-		22FA03ED29B09DE90077CC2E /* ProjectSettings */ = {
+		22FA03ED29B09DE90077CC2E /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				22FA03E429B09B8C0077CC2E /* LaunchScreen.storyboard */,
+				22FA03E229B09B8C0077CC2E /* Assets.xcassets */,
+				22FA03D929B09B890077CC2E /* AppDelegate.swift */,
 				22FA03E729B09B8C0077CC2E /* Info.plist */,
 			);
-			path = ProjectSettings;
+			path = Base;
 			sourceTree = "<group>";
 		};
 		3814B578F77E6D2059B72256 /* Frameworks */ = {
