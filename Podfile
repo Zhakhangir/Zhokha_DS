@@ -6,5 +6,5 @@ target 'design patterns swift' do
   use_frameworks!
 
   # Pods for design patterns swift
-
+  pod 'FLEX', :configurations => ['Debug']
 end
