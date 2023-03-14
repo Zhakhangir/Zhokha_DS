@@ -18,27 +18,72 @@ class ViewController: UIViewController {
     
     private var button: UIButton = {
         let button = UIButton()
-        button.setTitle("Flex", for: .normal)
         button.layer.cornerRadius = 12
-        button.backgroundColor = .green
+        button.backgroundColor = .black
+        button.setTitle("Flex", for: .normal)
+        button.setTitleColor(.white, for: .normal)
         return button
+    }()
+    
+    private var titleLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Welcome to Zhokhas DS"
+        label.font = .systemFont(ofSize: 28, weight: .medium)
+        return label
+    }()
+    
+    private let testAreaImage: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(named: "testArea")
+        imageView.contentMode = .scaleAspectFit
+        return imageView
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        view.backgroundColor = .purple
-        view.addSubview(cardView)
+    
+        addSubviews()
+        setupLayout()
+        addActions()
+    }
+    
+    private func addSubviews() {
+        view.backgroundColor = .white
+        view.addSubview(titleLabel)
         view.addSubview(button)
+        view.addSubview(testAreaImage)
+    }
+    
+    private func setupLayout() {
+        var layoutConstraints = [NSLayoutConstraint]()
+        
+        titleLabel.translatesAutoresizingMaskIntoConstraints = false
+        layoutConstraints += [
+            titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 32),
+            titleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
+            titleLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16)
+        ]
+        
+        testAreaImage.translatesAutoresizingMaskIntoConstraints = false
+        layoutConstraints += [
+            testAreaImage.heightAnchor.constraint(equalToConstant: view.frame.height/2),
+            testAreaImage.widthAnchor.constraint(equalToConstant: view.frame.height/2),
+            testAreaImage.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
+            testAreaImage.centerYAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerYAnchor)
+        ]
         
         button.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
+        layoutConstraints += [
             button.heightAnchor.constraint(equalToConstant: 52),
             button.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
             button.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -16),
             button.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16)
-        ])
+        ]
         
+        NSLayoutConstraint.activate(layoutConstraints)
+    }
+    
+    private func addActions() {
         let tap = UITapGestureRecognizer(target: self, action: #selector(tapGest))
         button.addGestureRecognizer(tap)
     }
@@ -53,4 +98,3 @@ class ViewController: UIViewController {
         }
     }
 }
-

@@ -7,4 +7,7 @@ target 'design patterns swift' do
 
   # Pods for design patterns swift
   pod 'FLEX', :configurations => ['Debug']
+  pod 'FirebaseAnalytics'
+  pod 'FirebaseAuth'
+  pod 'FirebaseFirestore'
 end
