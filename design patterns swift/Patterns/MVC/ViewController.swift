@@ -29,6 +29,8 @@ class ViewController: UIViewController {
         let label = UILabel()
         label.text = "Welcome to Zhokhas DS"
         label.font = .systemFont(ofSize: 28, weight: .medium)
+        label.textAlignment = .center
+        label.textColor = .black
         return label
     }()
     

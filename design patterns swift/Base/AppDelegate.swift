@@ -14,8 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        UNUserNotificationCenter.current().delegate = self
-    
+            
         let pushManager = PushNotificationManager(userID: "tam_tam_tam")
         pushManager.registerForPushNotifications()
         FirebaseApp.configure()
@@ -23,10 +22,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow()
         window?.rootViewController = ViewController()
         window?.makeKeyAndVisible()
-    
+        
         
         return true
     }
 }
-
-extension AppDelegate: UNUserNotificationCenterDelegate { }
